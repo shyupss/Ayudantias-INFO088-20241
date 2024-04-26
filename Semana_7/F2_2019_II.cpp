@@ -38,12 +38,16 @@ int main(int argc, char **argv){
 
 void genDatos(nodoL **l, int *A, int n){
 	int count = 0;
-	if (n==0){
+	if(n==0){
 		*l = nullptr;
 		return;
 		}
-	while (count<n) do{
-		nodoL *p = *l;
+	*l = new nodoL;
+	nodoL *p = *l;
+	while(count < n){
+		nodoL *q = new nodoL; 
+		p->next = q;
+		p = p->next;
 		count += 1;
 		}
 	}
