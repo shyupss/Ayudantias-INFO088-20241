@@ -11,7 +11,6 @@ struct Lista{
 	struct Lista *next;
 };
 typedef struct Lista nodoL;
-int i = 2;
 
 void genDatos(nodoL **L, int *A, int n);
 void sortA(nodoL *l, int *A, int n);
@@ -38,10 +37,8 @@ int main(int argc, char **argv){
 
 void genDatos(nodoL **l, int *A, int n){
 	int count = 0;
-	if(n==0){
-		*l = nullptr;
-		return;
-		}
+	if(n>0){
+		
 	*l = new nodoL;
 	nodoL *p = *l;
 	while(count < n){
@@ -49,8 +46,9 @@ void genDatos(nodoL **l, int *A, int n){
 		p->next = q;
 		p = p->next;
 		count += 1;
-		}
+		} 
 	}
+}
 
 void sortA(nodoL *l, int *A, int n){
 	
